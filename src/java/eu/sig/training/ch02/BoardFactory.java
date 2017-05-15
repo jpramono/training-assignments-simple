@@ -3,6 +3,7 @@ package eu.sig.training.ch02;
 public class BoardFactory {
     private int width;
     private int height;
+    private Square square;
     // tag::createBoard[]
     public Board createBoard(Square[][] grid) {
         assert grid != null;
@@ -19,19 +20,19 @@ public class BoardFactory {
     private void createborad(Square[][] grid) {
         for (int x = 0; x < this.width; x++) {
             for (int y = 0; y < height; y++) {
-                Square square = grid[x][y];
+                this.square = grid[x][y];
                 for (Direction dir : Direction.values()) {
-                    boardcreate(grid,  x, y, square, dir);
+                    boardcreate(grid,  x, y,  dir);
                 }
             }
         }
     }
 
-    private void boardcreate(Square[][] grid, int x, int y, Square square, Direction dir) {
+    private void boardcreate(Square[][] grid, int x, int y,  Direction dir) {
         int dirX = (this.width + x + dir.getDeltaX()) % this.width;
         int dirY = (this.height + y + dir.getDeltaY()) % this.height;
         Square neighbour = grid[dirX][dirY];
-        square.link(neighbour, dir);
+        this.square.link(neighbour, dir);
     }
     // end::createBoard[]
 }
