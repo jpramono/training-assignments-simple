@@ -21,7 +21,7 @@ public class FlagFactory {
         flag.put(Nationality.IRELAND, Arrays.asList(Color.GREEN, Color.WHITE, Color.ORANGE));
         flag.put(Nationality.HUNGARIAN,Arrays.asList(Color.RED, Color.WHITE, Color.GREEN));
         flag.put(Nationality.BULGARIAN,Arrays.asList(Color.WHITE, Color.GREEN, Color.RED));
-        flag.put(Nationality.RUSSIA, Arrays.asList(Color.WHITE, Color.BLUE, Color.RED);
+        flag.put(Nationality.RUSSIA, Arrays.asList(Color.WHITE, Color.BLUE, Color.RED));
 
 
         List<Color> result;
