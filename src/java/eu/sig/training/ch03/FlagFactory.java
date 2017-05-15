@@ -9,6 +9,11 @@ public class FlagFactory {
     // tag::getFlag[]
     public List<Color> getFlagColors(Nationality nationality) {
         List<Color> result;
+        return getColors(nationality);
+    }
+
+    private List<Color> getColors(Nationality nationality) {
+        List<Color> result;
         switch (nationality) {
         case DUTCH:
             result = Arrays.asList(Color.RED, Color.WHITE, Color.BLUE);
