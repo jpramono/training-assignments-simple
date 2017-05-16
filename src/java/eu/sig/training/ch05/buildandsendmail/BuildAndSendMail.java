@@ -2,30 +2,17 @@ package eu.sig.training.ch05.buildandsendmail;
 
 public class BuildAndSendMail {
     // tag::buildAndSendMail[]
-    private String mId;
-    private MailMessage mMessage;
-    public void buildAndSendMail(MailMan m,  String subject) {
+    public void buildAndSendMail(MailMan m,String mailid, MailMessage message,  String subject) {
         // Format the email address
 
         // Format the message given the content type and raw message
         // Send message
-        m.send(getMid(), subject, mMessage);
+        m.send(mailid, subject, message);
     }
     // end::buildAndSendMail[]
-    public void SetMid(String firstName,String lastName,String division){
-         this.mId = firstName.charAt(0) + "." + lastName.substring(0, 7) + "@"
-                + division.substring(0, 5) + ".compa.ny";
-    }
-    public String getMid(){
-        return this.mId;
-    }
-    public void SetMessage(MailFont font, String message1, String message2, String message3){
-        this.mMessage = formatMessage(font, message1 + message2 + message3);
 
-    }
-    public MailMessage getMessage(){
-        return this.mMessage;
-    }
+
+
 //    public void SetmId()
     @SuppressWarnings("unused")
     private MailMessage formatMessage(MailFont font, String string) {
@@ -39,7 +26,20 @@ public class BuildAndSendMail {
 
     }
 
+    private class Mailid{
+        public String Mailid(String firstName,String lastName,String division){
+            return firstName.charAt(0) + "." + lastName.substring(0, 7) + "@"
+                    + division.substring(0, 5) + ".compa.ny";
+        }
+    }
+    private class Mailmesage{
+        public MailMessage SetMessage(MailFont font, String message1, String message2, String message3){
+            return formatMessage(font, message1 + message2 + message3);
+
+        }
+    }
     private class MailFont {
+
 
     }
 
