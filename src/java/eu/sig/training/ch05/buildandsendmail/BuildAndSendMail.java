@@ -26,13 +26,13 @@ public class BuildAndSendMail {
 
     }
 
-    private class Mailid{
+    public class Mailid{
         public String Mailid(String firstName,String lastName,String division){
             return firstName.charAt(0) + "." + lastName.substring(0, 7) + "@"
                     + division.substring(0, 5) + ".compa.ny";
         }
     }
-    private class Mailmesage{
+    public class Mailmesage{
         public MailMessage SetMessage(MailFont font, String message1, String message2, String message3){
             return formatMessage(font, message1 + message2 + message3);
 
